@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Template</title>
+</head>
+<body style="margin: 0px;">
+<canvas id="canvas" width="900" height="600" />
+</body>
+<script>
+
+var dragging = false;
+var HEIGHT = 600;
+var WIDTH = 900;
+var x = 75;
+var y = 50;
+var ctx = document.getElementById("canvas").getContext("2d");
+var canvas = ctx.canvas;
+
+var circulo = new Circle(500, 500, 50, "#00FF00");
+
+Circle.prototype.draw = function () {
+	ctx.fillStyle = this.color;
+	ctx.beginPath();
+	ctx.arc(this.posX, this.posY, this.radio, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.closePath();
+};
+Circle.prototype.move = function (x, y) {
+	ctx.beginPath();
+	ctx.arc(x, y, this.radio, 0, Math.PI * 2);
+	ctx.fill();
+	ctx.closePath();
+};
+
+function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+	this.posX = paramPosX;
+	this.posY = paramPosY;
+	this.radio = paramRadio;
+	this.color = paramColor;
+}
+
+function rect(x,y) {
+	// ctx.beginPath();
+	circulo.move(x, y);
+	// ctx.arc(x, y, 50, 0, Math.PI * 2);
+	// ctx.closePath();
+	// ctx.fill();
+}
+
+function clear() {
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+function draw() {
+	clear();
+	ctx.fillStyle = "#FAF7F8";
+	rect(0,0,WIDTH,HEIGHT);
+	ctx.fillStyle = "#444444";
+	rect(x - circulo.radio, y - circulo.radio);
+}
+
+function myMove(e){
+	if (dragging){
+		x = e.clientX - canvas.offsetLeft;
+		y = e.clientY - canvas.offsetTop;
+	}
+}
+
+function myDown(e){
+	if (e.clientX < x + circulo.radio + canvas.offsetLeft && e.clientX > x - circulo.radio +
+		canvas.offsetLeft && e.clientY < y + circulo.radio + canvas.offsetTop &&
+		e.clientY > y - circulo.radio + canvas.offsetTop){
+			x = e.clientX - canvas.offsetLeft;
+			y = e.clientY - canvas.offsetTop;
+			dragging = true;
+			canvas.onmousemove = myMove;
+		}
+		insideCircle(e);
+	}
+
+	function insideCircle(e){
+		console.log(e);
+		var cX = e.clientX;
+		var cY = e.clientY;
+		var val = Math.sqrt(  Math.pow((cX - circulo.posX), 2) + Math.pow((cY - circulo.posY), 2));
+		console.log(val);
+		if(val < circulo.radio)
+			console.log("adentro");
+	}
+
+	function myUp(){
+		dragging = false;
+		canvas.onmousemove = null;
+	}
+
+	function init() {
+		canvas = document.getElementById("canvas");
+		ctx = canvas.getContext("2d");
+		return setInterval(draw, 10);
+	}
+
+	canvas.onmousedown = myDown;
+	canvas.onmouseup = myUp;
+	init();
+
+
+	</script>
+	</html>

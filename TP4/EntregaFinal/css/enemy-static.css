@@ -1,0 +1,50 @@
+  .enemy {
+    animation: moveForward 5.3s linear;
+    animation-play-state: paused;
+  }
+  .enemy-anim {
+    animation: moveForwardBat 3.3s linear, bat-fly 0.5s steps(3) infinite;
+    animation-play-state: paused;
+  }
+  .bat-only-fly {
+    animation: bat-fly 0.5s steps(3) infinite;  
+    animation-play-state: running;  
+    right: 647px !important;
+  }
+
+  .enemy-log {
+    top: 500px;
+    right: -234px;
+    width: 522px;
+    height: 188px;
+    z-index: -9994;
+    position: absolute;
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -webkit-transform: scale(0.25);
+    transform: scale(0.25);
+    background: url(../assets/misc/log1.png) left center;
+}
+
+.enemy-bat {
+  top: 417px;
+  right: -38px;
+  width: 160px;
+  height: 187px;
+  z-index: -9994;
+  position: absolute;
+  background-position-y: 7px;
+  background: url(../assets/misc/bat.png) left center;
+}
+
+@keyframes bat-fly {
+  100% { background-position: -480px; }
+}
+
+@keyframes moveForward {
+    100% { right: 790px; }
+}
+
+@keyframes moveForwardBat {
+    100% { right: 900px; }
+}

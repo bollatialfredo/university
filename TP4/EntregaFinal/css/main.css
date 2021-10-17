@@ -1,0 +1,92 @@
+/*color palette: http://paletton.com/#uid=75A0u0kg0cOb+nHdJivk1aenG7i */
+@font-face {
+  font-family: 'cowboy';
+  src: url('fonts/Le Voyage Dans La Lune.otf');
+}
+body{
+  overflow: hidden;
+  font-family: 'cowboy';
+}
+body, .cover-right, .cover-left {
+  background-color: #936F54;
+}
+.game-container {
+  width: 1300px;
+  height: 620px;
+}
+.cover-left {
+  height: 800px;
+  width: 633px;
+  margin-left: -505px;
+  position: absolute;
+}
+.cover-right {
+  height: 800px;
+  width: 200px;
+  margin-left: 896px;
+}
+#pre-game{
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  margin-top: 200px;
+}
+#play-btn{
+  color: black;
+  height: 50px;
+  width: 101px;
+  font-size: 23px;
+  margin-top: 80px;
+  width: 220px;
+  height: 70px;
+}
+#info-panel {
+  text-align: center;
+  font-size: 39px;
+  color: white;
+  margin-top: 127px;
+  margin-left: 692px;
+  z-index: 9999;
+  position: absolute;
+}
+.pre-load {
+  display: none;
+}
+.instruction-action {
+  color: #3A210F;
+}
+#instructions {
+  position: absolute;
+  color: white;
+  text-align: center;
+  line-height: 2;
+  font-size: 25px;
+  margin-left: 163px;
+  margin-top: 136px;
+  border: 3px solid;
+  width: 378px;
+  padding: 20px;
+  border-radius: 44px;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: easing-out 6s linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.erase-instructions {
+  animation-play-state: running !important;
+}
+
+.spin-hat {
+  margin-right: 120px;
+  animation: spin 5s ease infinite;
+}
+
+@keyframes easing-out {
+  100% { opacity: 0 }
+}
+
+@keyframes spin {
+  40% { transform:rotate(360deg); }
+  100% { transform:rotate(360deg); }
+}

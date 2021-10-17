@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Template</title>
+</head>
+<body>
+    <canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+</body>
+
+<script>
+var ctx = document.getElementById("canvas").getContext("2d");
+ctx.fillStyle= "#000000";
+var image1 = new Image();
+image1.src = "file:///C:/IMG_20170508_210707_672.jpg";
+
+image1.onload = function(){
+
+    ctx.drawImage(this, 0, 0);
+
+    var imageData = ctx.getImageData(0, 0, this.width, this.height);
+    console.log(imageData);
+    for (var x = 0; x < imageData.widt; x++) {
+      for (var y = 0; y < imageData.height; y++) {
+        setPixel(imageData, x, y, 255, 255, 255, 255);
+      }
+    }
+
+    ctx.putImageData(imageData, 0, 0);
+}
+
+function getRed(imageData, x, y){
+    var index = (x + y * imageData.width) * 4;
+    return imageData.data[index + 0];
+}
+
+function getGreen(data, x, y){
+    var index = (x + y * data.width) * 4;
+    return data.data[index + 1];
+}
+
+function getBlue(data, x, y){
+    var index = (x + y * data.width) * 4;
+    return data.data[index + 2];
+}
+
+function drawImage(img){
+    ctx.drawImage(img, 0, 0);
+}
+
+function setPixel(imageData, x, y, r, g, b, a){
+    var index = (x + y * imageData.width) * 4;
+    imageData.data[index+0] = r;
+    imageData.data[index+1] = g;
+    imageData.data[index+2] = b;
+    imageData.data[index+3] = a;
+}
+
+</script>
+</html>

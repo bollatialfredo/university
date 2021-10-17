@@ -1,0 +1,12 @@
+var click = new Audio();
+click.src = "assets/click.mp3";
+click.volume = 0.5;
+var click2 = new Audio();
+click2.src = "assets/click1.mp3";
+click2.volume = 0.5;
+var click3 = new Audio();
+click3.src = "assets/click2.mp3";
+click3.volume = 0.5;
+var win = new Audio();
+win.src = "assets/win.wav";
+win.volume = 0.5;

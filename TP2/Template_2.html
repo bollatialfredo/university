@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC >
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Template</title>
+	</head>
+		<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+	</body>
+	<script>
+
+	   var ctx = document.getElementById("canvas").getContext("2d");
+
+		 var circulo = new Circle(200, 200, 5, "#00FF00");
+
+		 ctx.canvas.onclick = function(){
+			for (var i = 0; i < 1000; i++) {
+				setTimeout(function() {
+					circulo.radio = Math.floor((Math.random() * 10) + 1);
+					circulo.color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+					var x = Math.floor((Math.random() * 900) );
+					var y = Math.floor((Math.random() * 600));
+					circulo.draw(x, y);
+				}, Math.floor((Math.random() * 2000) ));
+			}
+		 }
+
+		 function Circle(paramPosX,paramPosY,paramRadio,paramColor){
+			 this.posX = paramPosX;
+		   this.posY = paramPosY;
+			 this.radio = paramRadio;
+			 this.color = paramColor;
+		 }
+
+		 Circle.prototype.draw = function (x, y) {
+			 ctx.fillStyle = this.color;
+			 ctx.beginPath();
+			 ctx.arc(x, y, this.radio, 0, Math.PI * 2);
+			 ctx.fill();
+			 ctx.closePath();
+		 };
+
+	  // var gradient = ctx.createLinearGradient(10, 90, 200, 90);
+		// gradient.addColorStop(0, 'black');
+		// gradient.addColorStop(1, 'white');
+		// ctx.fillStyle = gradient;
+		// ctx.fillRect(10, 10, 200, 250);
+
+	 </script>
+</html>

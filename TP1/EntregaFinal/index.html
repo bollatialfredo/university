@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- jQuery from CDN -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/jribbble.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Image Filter</title>
+
+    <!-- Bootstrap + Font Awesome + Main CSS -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" href="assets/icon.png">
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="navbar">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div style="display: inline-flex">
+                                <div id="backButtonConteiner">
+                                    <label class="navbar-brand navbar-brand-op">
+                                        <span aria-hidden="true">Back</span>
+                                    </label>
+                                </div>
+                                <div class="pull-right" id="downloadButtonConteiner">
+                                    <label class="navbar-brand navbar-brand-op">
+                                        <span aria-hidden="true">Download</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav social">
+                                <li><a href="https://github.com/bollatialfredo"> <i class="fa fa-github"></i> </a> </li>
+                                <li><a href="https://www.linkedin.com/in/alfredo-bollati-837468103/"> <i class="fa fa-linkedin"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
+                            </ul>
+                        </div>
+
+                        <!-- /.nav-collapse -->
+                    </div>
+                    <!-- /.navbar -->
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div id="conteiner">
+                            <div id="inputConteiner" class="row flex-container">
+                                <label class="navbar-brand">
+                                    <span aria-hidden="true">Select Image</span>
+                                    <input type="file" id="file-input" style="display:none">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row grid-list-wrapper no-gutter-space" id="filters">
+                            <div class="container">
+                                <div class="filter">
+                                    <div id="f-negative" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Negative</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-custom" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Bloody</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-blancoYNegro" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Black & White</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-brillo" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Bright</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-blur" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Blur</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-sharp" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Sharp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-border" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Border Sharp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="f-custom-m" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Red Distortion</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="filter">
+                                    <div id="resetFilter" class="row">
+                                        <label class="navbar-brand">
+                                            <span aria-hidden="true">Reset Filters</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row flex-container">
+                                <canvas class="flex-item" id="canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <nav class="nav-footer">
+
+                <ul>
+                    <li><a href="#"> <i class="fa fa-github"></i> </a> </li>
+                    <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
+                </ul>
+
+                <p class="credits text-center">&copy; Alfredo Bollati - TUDAI</p>
+            </nav>
+        </div>
+
+    </footer>
+</body>
+</html>

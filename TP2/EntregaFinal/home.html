@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="css/main.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="icon" href="assets/logo.png">
+	<title>Shapes</title>
+</head>
+<body style="margin: 0px;">
+	<div class="row">
+		<div class="col-xs-3 col-xs-offset-2">
+          <div id="timer" class="xs-md-12">
+                <div class="container">
+                    <span id="minutes"></span><span id="seconds"></span>
+            </div>
+          </div>
+	  </div>
+		<div class="col-xs-2">
+			<a id="gps_ring" class="darken">
+				<img title="Inicio" onclick="restart()" src="assets/logo.png" alt="">
+			</a>
+				<div id="formJugar" class="form-group myinput">
+					<label for="usr">Dificultad</label>
+					<select type="select" class="form-control" id="usr">
+						<option value="">Facil</option>
+						<option value="">Normal</option>
+						<option value="">Dificil</option>
+					</select>
+					<button class="btn-lg btn-primary" type="button" id="botonJugar">JUGAR!</button>
+				</div>
+			</div>
+	</div>
+	<div id="win-screen">
+		<div class="col-xs-4 col-xs-offset-4 win-msg">
+			¡Ganaste!
+			<br>
+			Toca arriba para jugar otra vez!
+		</div>
+	</div>
+		<canvas style="display: none;" id="canvas" width="900" height="900"/>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/figures/figure.js"></script>
+<script src="js/figures/romb.js"></script>
+<script src="js/figures/star.js"></script>
+<script src="js/figures/sqare.js"></script>
+<script src="js/figures/triangle.js"></script>
+<script src="js/socket.js"></script>
+<script src="js/sounds.js"></script>
+<script src="js/figures/circle.js" charset="utf-8"></script>
+<script src="js/main.js"></script>
+<script src="js/canvas-events.js" charset="utf-8"></script>
+</html>

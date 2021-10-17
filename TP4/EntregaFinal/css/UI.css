@@ -1,0 +1,54 @@
+#black-cover {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: 99999;
+  opacity: 0;
+}
+.black-cover-fade-in {
+  animation: blackCoverFadeIn 5s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blackCoverFadeIn {
+  100% {opacity: 0.5}
+}
+
+.after-game-fade-in {
+  animation: afterGameFadeIn 2s linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes afterGameFadeIn {
+  100% {opacity: 1}
+}
+
+#after-game {
+  text-align: center;
+  z-index: 99999;
+  position: relative;
+  opacity: 0;
+}
+#play-again-btn {
+  height: 60px;
+  width: 200px;
+  font-size: 21px;
+}
+#play-again-txt {
+  margin-top: 250px;
+  font-size: 30px;
+  color: white;
+  margin-bottom: 21px;
+}
+.points {
+  margin-left: -47px;
+}
+.pointsAnim {
+  animation: pointsAnim 0.2s linear;
+}
+
+@keyframes pointsAnim {
+  50% { font-size: 45px; color: #3A210F;}
+  100% { font-size: 39px; color: white;}
+}

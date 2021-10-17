@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Template</title>
+	</head>
+		<canvas id="canvas" width="900" height="600" style="border:#000 solid 1px;" />
+	</body>
+	<script>
+	   var ctx = document.getElementById("canvas").getContext("2d");
+		 console.log(ctx);
+	   ctx.fillStyle= "#000000";
+	   ctx.fillRect(0,0,150,100);//posicionamiento del rectangulo
+	   ctx.beginPath();//lapiz
+	   ctx.arc(55,55,50,Math.PI * 1.25 , Math.PI * 0.75);//angulos del circulo
+	   ctx.lineWidth = 10;//ancho de linea
+	   ctx.lineCap = 'round';
+	   ctx.strokeStyle = 'rgba(0,100,100,0.8)';//color de lapiz, circulo
+	   ctx.stroke();//dibuja en el contexto	 
+	 </script>
+</html>

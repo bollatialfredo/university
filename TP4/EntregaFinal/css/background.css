@@ -1,0 +1,69 @@
+.game-background {
+    margin: auto;
+    top: 15px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 1024px;
+    height: 773px;
+    position: absolute;
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-position: left;
+    background-repeat: repeat-x;
+    -moz-transform: scale(0.39);
+    -o-transform: scale(0.39);
+    -webkit-transform: scale(0.39);
+    transform: scale(0.75);
+    background-size: contain !important;
+}
+
+@keyframes background-movement {
+    100% { background-position-x: -1024px; }
+}
+
+.layer-7 {
+    z-index: -9999;
+    background: url(../assets/background/layer_07_s.png);
+    background-position: left;
+}
+.layer-6 {
+    z-index: -9998;
+    background: url(../assets/background/layer_06_s.png);
+    animation: 300s background-movement linear infinite;
+    animation-play-state: paused;
+}
+.layer-5 {
+    z-index: -9997;
+    background: url(../assets/background/layer_05_s.png);
+    animation: 100s background-movement linear infinite;
+    animation-play-state: paused;
+}
+.layer-4 {
+    z-index: -9996;
+    background: url(../assets/background/layer_04_s.png);
+    animation: 50s background-movement linear infinite;
+    animation-play-state: paused;
+}
+.layer-3 {
+    z-index: -9995;
+    background: url(../assets/background/layer_03_s.png);
+    animation: 25s background-movement linear infinite;
+    animation-play-state: paused;
+}
+.layer-2 {
+    z-index: -9994;
+    background: url(../assets/background/layer_02_s.png);
+    animation: 4s background-movement linear infinite;
+    animation-play-state: paused;
+}
+.layer-1 {
+    z-index: -9992;
+    background: url(../assets/background/layer_01_s.png);
+    animation: 4s background-movement linear infinite;
+    animation-play-state: paused;
+}

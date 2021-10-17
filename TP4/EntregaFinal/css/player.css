@@ -1,0 +1,89 @@
+
+.idle {
+    top: 300px;
+    left: 140px;
+    width: 329px;
+    height: 496px;
+    z-index: -9993;
+    position: absolute;
+    -moz-transform: scale(0.3);
+    -o-transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+    background: url('../assets/idle.png') left center;
+    animation: idle 0.8s steps(10) infinite;
+}
+
+.walk {
+    width: 425px;
+    height: 517px;
+    left: 122px;
+    background: url('../assets/walk.png') left center;
+    animation: walk 0.8s steps(10) infinite;
+}
+
+.standing-right {
+    width: 329px;
+    height: 496px;
+    background: url('../assets/idle.png');
+    animation: idle 0.8s steps(10) infinite;
+}
+
+.die{
+    top: 260px;
+    left: 60px;
+    width: 598px;
+    height: 610px;
+    background: url('../assets/dead.png');
+    animation: die_anim 1.4s steps(9);
+}
+.dead {
+    background-position: -5382px;
+}
+.jump {
+    width: 417px;
+    height: 546px;
+    background: url('../assets/jump.png') left center;
+    animation: jump 1s steps(10);
+}
+.slide {
+    top: 380px;
+    width: 404px;
+    height: 399px;
+    background: url('../assets/slide.png') left center;
+    animation: slide 0.5s steps(10), slideForward 1.5s ease;
+}
+
+.erase {
+    animation: erase 1s;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes slideForward {
+    50% { left: 180px }
+    100% { left: 140px }
+}
+
+@keyframes erase {
+    100% { opacity: 0; }
+}
+
+@keyframes idle {
+    100% { background-position: -3290px; }
+}
+@keyframes die_anim {
+    100% { background-position: -5382px; }
+}
+@keyframes walk {
+    100% { background-position: -4250px; }
+}
+@keyframes jump {
+    50% { top: 100px; }
+    100% { background-position: -4170px; top: 300px; }
+}
+@keyframes slide {
+    100% { background-position: -4040px; }
+}
